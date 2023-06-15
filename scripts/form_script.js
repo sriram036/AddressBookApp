@@ -27,6 +27,60 @@ class AddressBookData {
             this._number = number;
         else throw 'Number is Incorrect';
     }
+
+    get city() { return this._city; }
+    set city(city) {
+        this._city = city;
+    }
+
+    get state() { return this._state; }
+    set state(state) {
+        this._state = state;
+    }
+
+    get zipcode() { return this._zipcode; }
+    set zipcode(zipcode) {
+        this._zipcode = zipcode;
+    }
+}
+
+const save = () => {
+    try {
+        let addressBookData = createAddressBook();
+    } catch (e) {
+        return;
+    }
+}
+
+const createAddressBook = () => {
+    let addressBookData = new AddressBookData();
+    try {
+        addressBookData.name = getInputValueById('#name');
+    } catch (e) {
+        setTextValue('.text-error', e);
+        throw e;
+    }
+    try {
+        addressBookData.address = getInputValueById('#address');
+    } catch (e) {
+        setTextValue('.address-error', e);
+        throw e;
+    }
+    try {
+        addressBookData.number = getInputValueById('#number');
+    } catch (e) {
+        setTextValue('.number-error', e);
+        throw e;
+    }
+    addressBookData.city = getInputValueById('#city');
+    addressBookData.state = getInputValueById('#state');
+    addressBookData.zipcode = getInputValueById('#zipcode');
+    return addressBookData;
+}
+
+const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
