@@ -142,7 +142,7 @@
             </div>
         </div>
     </header>
-    <div class="form-content">
+    <div id="formId" class="form-content">
         <form class="form" action="#">
             <div class="form-head">
                 Person Address Form
@@ -156,10 +156,12 @@
             <div class="row-content">
                 <label class="label text" for="address">Address</label>
                 <input class="input" type="text" id="address" name="address" placeholder="Your Address ..." required>
+                <error-output class="address-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="number">Mobile Number</label>
                 <input class="input" type="text" id="number" name="number" placeholder="Your Number ..." required>
+                <error-output class="number-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="city">City</label>
@@ -198,5 +200,6 @@
             </div>
         </form>
     </div>
+    <script src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/scripts/form_script.js"></script>
 </body>
 </html>
