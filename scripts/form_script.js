@@ -42,6 +42,12 @@ class AddressBookData {
     set zipcode(zipcode) {
         this._zipcode = zipcode;
     }
+
+    toString() {
+        return "id=" + this.id + ", name=" + this.name + ", address=" + this.address + 
+                ", number=" + this.number + ", city=" + this.city + ", state=" + 
+                this.state + ", zipcode=" + this.zipcode;
+    }
 }
 
 const save = () => {
@@ -92,6 +98,7 @@ function createAndUpdateStorage(addressBookData) {
     } else {
         addressBookList = [addressBookData]
     }
+    alert(addressBookList.toString());
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
 }
 
