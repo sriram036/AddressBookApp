@@ -79,6 +79,57 @@
             opacity: 1;
             padding-bottom: 20px;
         }
+
+        .row-content {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+            align-items: center;
+            border: 0px solid green;
+        }
+
+        .label {
+            min-width: 140px;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        .text {
+            font-size: 16px;
+            color: #42515f;
+            opacity: 1;
+            font-family: Roboto;
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        error-output {
+            margin-left: 10px;
+            font-size: 12px;
+            font: bold;
+            font-style: italic;
+            color: red;
+        }
+
+        select {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            font: normal normal normal 16px Roboto;
+            letter-spacing: 0px;
+            color: #42515f;
+            background-color: transparent;
+        }
     </style>
 </head>
 <body>
@@ -94,8 +145,56 @@
     <div class="form-content">
         <form class="form" action="#">
             <div class="form-head">
-                Person Addres Form
+                Person Address Form
                 <img style="position: relative; left: 250px; top: 10px; height: 30px; cursor: pointer;" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-cancel-50 (1).png" alt="">
+            </div>
+            <div class="row-content">
+                <label class="label text" for="name">Name</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Your Name ..." required>
+                <error-output class="text-error" for="text"></error-output>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="address">Address</label>
+                <input class="input" type="text" id="address" name="address" placeholder="Your Address ..." required>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="number">Mobile Number</label>
+                <input class="input" type="text" id="number" name="number" placeholder="Your Number ..." required>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="city">City</label>
+                <div>
+                    <select id="city" name="city">
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="NewDelhi">NewDelhi</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Chennai">Chennai</option>
+                    </select>
+                </div>
+                <label class="label text" for="state">State</label>
+                <div>
+                    <select id="state" name="state">
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="WestBengal">WestBengal</option>
+                        <option value="TamilNadu">TamilNadu</option>
+                    </select>
+                </div>
+                <label class="label text" for="zipcode">Zipcode</label>
+                <div>
+                    <select id="zipcode" name="zipcode">
+                        <option value="560063">560063</option>
+                        <option value="500001">500001</option>
+                        <option value="400001">400001</option>
+                        <option value="110001">110001</option>
+                        <option value="700001">700001</option>
+                        <option value="600001">600001</option>
+                    </select>
+                </div>
             </div>
         </form>
     </div>
