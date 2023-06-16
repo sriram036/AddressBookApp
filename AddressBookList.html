@@ -97,6 +97,57 @@
             text-align: center;
             display: inline-block;
         }
+
+        .table-main {
+            width: 80%;
+            margin: 0 auto;
+            overflow: auto;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: separate;
+            border-collapse: 0 15px;
+            min-width: 800px;
+        }
+
+        td, th {
+            text-align: center;
+            padding: 5px 8px;
+        }
+
+        th {
+            background: #42515f 0% 0% no-repeat padding-box;
+            border-radius: 3px 3px 0px 0px;
+            text-align: center;
+            font: normal normal medium 18px/24px Roboto;
+            letter-spacing: 0px;
+            color: #ffffff;
+            text-transform: uppercase;
+            opacity: 1;
+            border: 0px solid #dddddd;
+        }
+
+        tr:not(:first-child) {
+            background: #ffffff 0% 0% no-repeat padding-box;
+            border: 1px solid #e3e3e3;
+            border-radius: 3px;
+        }
+
+        td {
+            font: normal normal normal 14px/21px Roboto;
+            letter-spacing: 0px;
+            color: #3d3d3d;
+            opacity: 1;
+        }
+
+        td img:first-child {
+            margin-right: 10px;
+        }
+
+        td img {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -115,6 +166,55 @@
                 Contact Details <div class="address-count">5</div>
             </div>
             <a href="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/AddressBookForm.html" class="add-button"><img src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-plus-24.png" alt="">Add Contact</a>
+        </div>
+        <div class="header-content">
+            <table id="display" class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Number</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zipcode</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>Sriram</td>
+                    <td>gandhi first street</td>
+                    <td>1234567890</td>
+                    <td>Bangalore</td>
+                    <td>Karnataka</td>
+                    <td>560032</td>
+                    <td>
+                        <img id="1" onclick="remove(this)" alt="delete" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-delete-button-30.png">
+                        <img id="1" onclick="update(this)" alt="edit" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-edit-button-48.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mujeeb</td>
+                    <td>Periyar first street</td>
+                    <td>8334567890</td>
+                    <td>Mumbai</td>
+                    <td>Maharashtra</td>
+                    <td>500001</td>
+                    <td>
+                        <img id="1" onclick="remove(this)" alt="delete" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-delete-button-30.png">
+                        <img id="1" onclick="update(this)" alt="edit" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-edit-button-48.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Yash</td>
+                    <td>Bharathiyar first street</td>
+                    <td>1348567890</td>
+                    <td>NewDelhi</td>
+                    <td>Delhi</td>
+                    <td>3000001</td>
+                    <td>
+                        <img id="1" onclick="remove(this)" alt="delete" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-delete-button-30.png">
+                        <img id="1" onclick="update(this)" alt="edit" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-edit-button-48.png">
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
