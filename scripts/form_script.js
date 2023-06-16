@@ -102,6 +102,20 @@ function createAndUpdateStorage(addressBookData) {
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
 }
 
+const resetForm = () => {
+    setValue('#name','');
+    setValue('#address','');
+    setValue('#number','');
+    setValue('#city','Bangalore');
+    setValue('#state','Karnataka');
+    setValue('#zipcode','560063');
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
+
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
