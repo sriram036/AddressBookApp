@@ -58,25 +58,24 @@ const save = () => {
         return;
     }
 }
-
 const createAddressBook = () => {
     let addressBookData = new AddressBookData();
     try {
         addressBookData.name = getInputValueById('#name');
     } catch (e) {
-        setTextValue('.text-error', e);
+        setValue('.text-error', e);
         throw e;
     }
     try {
         addressBookData.address = getInputValueById('#address');
     } catch (e) {
-        setTextValue('.address-error', e);
+        setValue('.address-error', e);
         throw e;
     }
     try {
         addressBookData.number = getInputValueById('#number');
     } catch (e) {
-        setTextValue('.number-error', e);
+        setValue('.number-error', e);
         throw e;
     }
     addressBookData.city = getInputValueById('#city');

@@ -25,11 +25,23 @@ const createInnerHtml = () => {
                 <td>${addressBookData._state}</td>
                 <td>${addressBookData._zipcode}</td>
                 <td>
-                    <img id="${addressBookData._id}" onclick="remove(this)" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-delete-button-30.png" alt="delete">
-                    <img id="${addressBookData._id}" onclick="update(this)" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-edit-button-48.png" alt="edit">
+                    <img id="${addressBookData._name}" onclick="remove(this)" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-delete-button-30.png" alt="delete">
+                    <img id="${addressBookData._name}" onclick="update(this)" src="/Users/admin/Documents/Java Fellowship Program/AddressBookApp/image/icons8-edit-button-48.png" alt="edit">
                 </td>
             </tr>
         `;
     }
     document.querySelector('.table').innerHTML = innerHtml;
+}
+
+const remove = (node) => {
+    let addressBookData = addressList.find(addressData => addressData._name == node.id);
+    alert(addressBookData._name + " contact is deleting...");
+    if (!addressBookData) return;
+    const index = addressList.map(addressData => addressData._name)
+                    .indexOf(addressBookData._name);
+    addressList.splice(index, 1);
+    localStorage.setItem("AddressBookList",JSON.stringify(addressList));
+    document.querySelector(".address-count").textContent = addressList.length;
+    createInnerHtml();
 }
