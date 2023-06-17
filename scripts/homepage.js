@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     addressList = getAddressBookDataFromStorage();
     document.querySelector(".address-count").textContent = addressList.length;
     createInnerHtml();
-    localStorage.removeItem('editEmp');
+    localStorage.removeItem('editAddress');
 });
 
 const getAddressBookDataFromStorage = () => {
@@ -44,4 +44,11 @@ const remove = (node) => {
     localStorage.setItem("AddressBookList",JSON.stringify(addressList));
     document.querySelector(".address-count").textContent = addressList.length;
     createInnerHtml();
+}
+
+const update = (node) => {
+    let addressBookData = addressList.find(addressData => addressData._name == node.id);
+    if (!addressBookData) return;
+    localStorage.setItem('editAddress', JSON.stringify(addressBookData));
+    window.location.replace("/Users/admin/Documents/Java Fellowship Program/AddressBookApp/AddressBookForm.html");
 }
