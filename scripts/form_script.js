@@ -115,6 +115,9 @@ const setValue = (id, value) => {
     element.value = value;
 }
 
+let isUpdate = false;
+let addressBookObj = {};
+
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
@@ -160,4 +163,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
             numberError.textContent = e;
         }
     });
+
+    checkForUpdate();
 });
+
+const checkForUpdate = () => {
+    const addressBookJson = localStorage.getItem('editAddress')
+    isUpdate = addressBookJson ? true : false;
+    if (!isUpdate) return;
+    addressBookObj = JSON.parse(addressBookJson);
+    setForm();
+}
+
+const setForm = () => {
+    setValue('#name', addressBookObj._name);
+    setValue('#address', addressBookObj._address);
+    setValue('#number', addressBookObj._number);
+    setValue('#city', addressBookObj._city);
+    setValue('#state', addressBookObj._state);
+    setValue('#zipcode', addressBookObj._zipcode);
+}
